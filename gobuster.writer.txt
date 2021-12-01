@@ -1,14 +1,3 @@
-===============================================================
-Gobuster v3.1.0
-by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
-===============================================================
-[+] Url:                     http://10.10.11.101
-[+] Method:                  GET
-[+] Threads:                 10
-[+] Wordlist:                common.txt
-[+] Negative Status codes:   404
-[+] User Agent:              gobuster/3.1.0
-[+] Timeout:                 10s
-===============================================================
-2021/12/01 09:05:32 Starting gobuster in directory enumeration mode
-===============================================================
+/about                (Status: 200) [Size: 3522]
+/contact              (Status: 200) [Size: 4905]
+/logout               (Status: 302) [Size: 208] [--> http://writer.htb/]
