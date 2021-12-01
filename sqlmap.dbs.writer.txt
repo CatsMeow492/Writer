@@ -41,3 +41,19 @@ redirect is a result of a POST request. Do you want to resend original POST data
 3
 
 [14:29:44] [INFO] retrieved: 
+
+[14:30:09] [INFO] retrieved: [14:30:09] [WARNING] it is very important to not stress the network connection during usage of time-based payloads to prevent potential disruptions 
+
+[14:30:09] [WARNING] in case of continuous data retrieval problems you are advised to try a switch '--no-cast' or switch '--hex'
+
+[14:30:09] [INFO] retrieved: 
+
+[14:31:06] [INFO] retrieved: 
+
+[14:31:06] [INFO] retrieved: 
+
+[14:31:32] [INFO] retrieved: 
+[14:31:32] [INFO] falling back to current database
+[14:31:32] [INFO] fetching current database
+
+[14:31:32] [INFO] retrieved: [14:32:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
