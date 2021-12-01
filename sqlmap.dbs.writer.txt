@@ -57,3 +57,13 @@ redirect is a result of a POST request. Do you want to resend original POST data
 [14:31:32] [INFO] fetching current database
 
 [14:31:32] [INFO] retrieved: [14:32:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:33:45] [WARNING] unexpected response detected. Will use (extra) validation step in similar cases
+[14:33:45] [WARNING] unexpected HTTP code '302' detected. Will use (extra) validation step in similar cases
+
+
+[14:34:06] [INFO] retrieved: 
+[14:34:06] [CRITICAL] unable to retrieve the database names
+[14:34:06] [INFO] fetched data logged to text files under '/home/taylor/.local/share/sqlmap/output/writer.htb'
+
+[*] ending @ 14:34:06 /2021-12-01/
+
