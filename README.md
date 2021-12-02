@@ -335,6 +335,7 @@ That's it for the user flag! Now it's time to get...
 
 ## Root Access
 
+The constant server issues on hack the box really make it not worth getting the root flag.  Due to constant disconnections it took me nearly 7 hours just go get the user flag.  Hacking is fun but hack the box is a terrible service.
 
 
 
